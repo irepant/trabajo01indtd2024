@@ -1,0 +1,44 @@
+---
+title: "Enunciados"
+author: "Irene Pantoja Reina"
+date: "2024-09-27"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# Enunciados de los problemas
+
+## Ejercicio 1
+Utiliza métodos de R studio para la resolución del siguiente ejercicio de teoría de la decisión bajo incertidumbre. 
+```{r}
+source("teoriadecision_funciones_incertidumbre.R")
+e1=c(550,300,250,450)
+e2=c(600,250,350,400)
+e3=c(550,400,250,450)
+tabla=crea.tablaX(c(e1,e2,e3),4,3)
+
+library(kableExtra)
+library(knitr)
+ 
+kable(tabla)
+```
+
+
+## Ejercicio 2
+Carlos es un estudiante a punto de terminar Estadística que está planteándose varias alternativas para su futuro, entre las que quiere elegir aquella en la que consiga ahorrar la mayor cantidad de dinero en los primeros 5 años tras terminarla, ya que tiene como finalidad reunir el máximo dinero posible para la entrada de una vivienda propia. 
+La verdadera vocación de Carlos ha sido siempre ser profesor de Matemáticas en un instituto público de secundaria, pero quiere saber si merecerá la pena perseguir su sueño, o por el contrario es preferible elegir otra de las opciones que tiene en mente. El principal inconveniente es que todas las alternativas tienen irregularidades dependiendo de factores externos, lo que hace que el dinero que perciba por cada una de ellas varíe.
+
+- La primera opción que se plantea es **aceptar una de las plazas fijas como profesor** que se le han concedido por haber aprobado las oposiciones. Si obtuviese la plaza que ha solicitado en Santiponce, obtendría un sueldo de 1800€ mensuales, más dos pagas extraordinarias al año. Como el centro se encuentra en su municipio actual, podría seguir viviendo en casa de sus padres para así poder ahorrar lo máximo posible, aunque tendría unos gastos fijos en ocio y transporte de unos 300€ al mes. Por el contrario, si fuese enviado a su segunda opción, en Salamanca, el sueldo ascendería a 2250€ al mes en 14 pagas, pero tendría unos gastos mensuales de 1600€ al mes entre alquiler, transporte, comida, etc. Como ventaja, en este centro se le ofrece un plus de 225€ al mes si presenta un certificado C1 en una de las lenguas extranjeras que se imparten en el centro. 
+
+- ⁠La segunda opción es **quedarse a trabajar en la empresa donde está realizando las prácticas**, donde recibiría un salario de 1450€ mensuales en 12 pagas prorrateadas y que además está junto a su casa, lo que le permitiría seguir viviendo con sus padres estos primeros 5 años y sólo tener 250€ mensuales de gasto, principalmente en ocio. La empresa, por acreditar un nivel C1 en una lengua extranjera le ascendería de categoría, por lo que pasaría a cobrar 200€ más. Se le plantea también la posibilidad de ser trasladado a la sede de Valladolid, donde realizaría tareas diferentes y por lo tanto su sueldo cambiaría. Allí cobraría 1950€, o 2150€ con el C1 acreditado, a los que habría que restar los 1500€ que supondría el vivir allí aproximadamente.
+
+- ⁠Como última opción, Carlos se plantea **hacer un máster** para complementar sus estudios. Para realizar dicho máster tendría que pagar 5500€ en una universidad privada, que le ofrece realizarlo de forma online, por lo que durante el año que dura la maestría podría mantener su trabajo en la empresa que está junto a su casa y por la que recibía un salario de 1450€ al mes (menos gastos), o 1650€ si acreditaba el idioma. Al finalizar el máster, optaría a un puesto de trabajo con mejores condiciones y más especializado en la misma empresa de antes, donde recibiría un salario de 1900€ en 12 pagas, o de 2100€ si acreditase el idioma. Si decidiese ser enviado a la sede de Valladolid, su sueldo ascendería a 2400€ (o 2600€ con el idioma), pero tendría unos gastos mensuales fijos de 1400€.
+
+
+
+
