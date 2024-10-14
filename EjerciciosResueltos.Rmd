@@ -31,6 +31,8 @@ kable(tabla)
 
 A continuación, vamos a ver la decisión que tomaríamos dependiendo del método escogido.
 
+### Caso favorable
+
 ###### WALD
 
 ```{r}
@@ -95,6 +97,72 @@ kable(criterio_todo)
 
 Podemos concluir que la mejor decisión que podemos tomar es 'd3'.
 
+### Caso desfavorable
+
+###### WALD
+
+```{r}
+wald2=criterio.Wald(tabla,favorable = F)
+wald2
+```
+
+La opción elegida según el método de Wald es 'd4'.
+
+######  OPTIMISTA
+
+```{r}
+optimista2=criterio.Optimista(tabla,favorable = F)
+optimista2
+```
+
+Las opciones elegidas según el método Optimista son 'd1', 'd2' y 'd4'.
+
+###### HURWICZ
+
+```{r}
+hurwicz2=criterio.Hurwicz(tabla,favorable = F)
+hurwicz2
+```
+
+La opción elegida según el método de Hurwicz es 'd4'.
+
+###### SAVAGE
+
+```{r}
+savage2=criterio.Savage(tabla,favorable = F)
+savage2
+```
+
+Las opciones elegidas según el método Savage son 'd1' y 'd4'.
+
+###### LAPLACE
+
+```{r}
+laplace2=criterio.Laplace(tabla,favorable = F)
+laplace2
+```
+
+Las opciones elegidas según el método de Laplace son 'd1' y 'd4'.
+
+###### PUNTO IDEAL
+
+```{r}
+puntoideal2=criterio.PuntoIdeal(tabla,favorable = F)
+puntoideal2
+```
+
+Las opciones elegidas según el método del punto ideal son 'd1' y 'd4'.
+
+
+###### CONCLUSIÓN
+```{r}
+criterio_todo2=criterio.Todos(tabla,favorable = F)
+library(kableExtra)
+kable(criterio_todo2)
+```
+
+Podemos concluir que la mejor decisión que podemos tomar es 'd4', al ser la que más métodos dan por buena.
+
 # Ejercicio 2
 Carlos es un estudiante a punto de terminar Estadística que está planteándose varias alternativas para su futuro, entre las que quiere elegir aquella en la que consiga ahorrar la mayor cantidad de dinero en los primeros 5 años tras terminarla, ya que tiene como finalidad reunir el máximo dinero posible para la entrada de una vivienda propia. 
 La verdadera vocación de Carlos ha sido siempre ser profesor de Matemáticas en un instituto público de secundaria, pero quiere saber si merecerá la pena perseguir su sueño, o por el contrario es preferible elegir otra de las opciones que tiene en mente. El principal inconveniente es que todas las alternativas tienen irregularidades dependiendo de factores externos, lo que hace que el dinero que perciba por cada una de ellas varíe.
@@ -135,9 +203,17 @@ La tabla inicial es:
 kable(tabla1)
 ```
 
-La solución utilizando todos los criterios es:
+La solución utilizando todos los criterios en caso favorable es:
 ```{r}
 kable(tabla1_criterios)
 ```
 
 Como vemos, la opción de quedarse trabajando en la empresa donde está realizando las prácticas en el mismo puesto que ahora (d2) queda rechazada por todos los métodos utilizados. Entre los otros dos, la decisión depende del método que tomemos, pero principalmente la eligida es la opción de aceptar el puesto como profesor (d1).
+
+En caso desfavorable, la solución sería:
+```{r}
+tabla1_criterios_D=criterio.Todos(tabla1, favorable= F)
+kable(tabla1_criterios_D)
+```
+
+Por unanimidad, la opción elegida es la segunda (d2), es decir, quedarse trabajando en la empresa donde está realizando las prácticas actualmente, sin posibilidad de ascenso. 
